@@ -49,6 +49,7 @@ export const removeExpense = ({ id } = {}) => ({
   id,
 });
 
+//! Firebase (async action)
 export const startRemoveExpense = ({ id } = {}) => {
   return dispatch => {
     return db
@@ -66,12 +67,25 @@ export const editExpense = (id, updates) => ({
   updates,
 });
 
+//! Firebase (async action)
+export const startEditExpense = (id, updates) => {
+  return dispatch => {
+    return db
+      .ref(`expenses/${id}`)
+      .update(updates)
+      .then(() => {
+        dispatch(editExpense(id, updates));
+      });
+  };
+};
+
 //! SET_EXPENSES
 export const setExpenses = expenses => ({
   type: "SET_EXPENSES",
   expenses,
 });
 
+//! Firebase (async action)
 export const startSetExpenses = () => {
   return dispatch => {
     return db
