@@ -5,8 +5,16 @@ import { startLogin } from '../actions/auth';
 
 //stateless funtional component
 export const LoginPage = ({ startLogin }) => (
-  <div>
-    <button onClick={startLogin}>Login</button>
+  <div className="box-layout">
+    <div className="box-layout__box">
+      <h1 className="box-layout__title">Keep track of your Budget</h1>
+      <p>It's time to get your expenses under control</p>
+
+      <button className="button" onClick={startLogin}>
+        Sign in with
+        <span className="btn__icon" />
+      </button>
+    </div>
   </div>
 );
 

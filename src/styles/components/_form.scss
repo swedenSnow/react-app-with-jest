@@ -1,0 +1,19 @@
+.form {
+    display: flex;
+    flex-flow: column wrap;
+    > * {
+        margin-bottom: $m-size;
+    }
+}
+
+.form__error {
+    margin: 0 0 $m-size 0;
+    font-family: $italic-font;
+    font-weight: 200;
+    color:$dark-grey;
+
+}
+
+.form input, textarea, .SingleDatePickerInput {
+    border-radius: 5px;
+}

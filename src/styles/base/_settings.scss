@@ -1,4 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700');
+//? Fonts
+$italic-font: 'Lobster', cursive;
+$regular-font: 'Raleway', sans-serif;
+
+//? Font sizes
+$font-size-small: 1.4rem;
+$font-size-large: 1.8rem;
+
 //? Colors
+$off-white:#f7f7f7;
+$blue: rgb(45, 106, 238);
+$dark-blue: #364051;
+$dark-grey: #333;
+$grey:#666;
 //?Spacing & sizes
 $xs-size: 1rem;
 $s-size: 1.2rem;

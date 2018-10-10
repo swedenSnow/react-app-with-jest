@@ -1,0 +1,29 @@
+.box-layout {
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/images/bg.jpg);
+    background-size: cover;
+    font-family: $regular-font;
+}
+
+.box-layout__box{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background: fade-out($color: #fff, $amount: .35);
+    border-radius: 5px;
+    text-align: center;
+    width: 30rem;
+    padding: $l-size $m-size;
+    
+}
+
+.box-layout__title{
+    margin: 0 0 $m-size 0;
+    line-height: 1;
+    font-family: $italic-font;
+    font-size: 4rem;
+}
