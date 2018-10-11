@@ -2,7 +2,8 @@
 
 ## Requires
 
-[Node][npm]
+- [Node](https://nodejs.org/en/download)
+- [npm](https://www.npmjs.com/)
 
 ### Install
 
