@@ -19,9 +19,11 @@ exports[`should correctly render LoginPage 1`] = `
       className="button"
     >
       Sign in with
-      <span
-        className="btn__icon"
-      />
+    </button>
+    <button
+      className="button__github"
+    >
+      Sign in with Github
     </button>
   </div>
 </div>

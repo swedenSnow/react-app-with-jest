@@ -12,8 +12,13 @@
     font-family: $regular-font;
     margin: 0;
     font-weight: 300;
+    font-size: 2rem;
     span {
         font-weight: 700;
         font-family: Arial, Helvetica, sans-serif;
+    }
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 
+        4rem;
     }
 }

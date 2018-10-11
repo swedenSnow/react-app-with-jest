@@ -11,17 +11,18 @@
     font-weight: bold;
     color: #fff;
     border: none;
-    // vertical-align: middle;
-}
+    margin-bottom: $s-size;
 
-.button:hover{
-    background: fade-out($color: rgba(241, 219, 18, 0.644), $amount: .15);
-    box-shadow: 1px 1px 1px 1px $dark-grey;
-    border: none;
-    padding-right: 1rem;
-    letter-spacing: .4px;
-    padding-left: 0.5rem;
-  }
+    &.button:hover{
+        background:#34a853;
+        box-shadow: 1px 1px 1px 1px $dark-grey;
+        border: none;
+        padding-right: 1rem;
+        letter-spacing: .4px;
+        padding-left: 0.5rem;
+      }
+    
+}
 
 .button:hover:after {
     opacity: 1;
@@ -37,6 +38,19 @@
     transition: 500ms;
     margin-right: 1.23rem;;
     }
+
+.button__github {
+    @extend .button;
+    background: $dark-grey;
+
+    &:hover {
+        background: black;
+    }
+
+    &:after {
+        content: none;
+    }
+}   
 
 .button--link{
     display: inline-block;

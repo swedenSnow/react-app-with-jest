@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { startLogin } from '../actions/auth';
+import { startLogin, startLoginGit } from '../actions/auth';
 
 //stateless funtional component
-export const LoginPage = ({ startLogin }) => (
+export const LoginPage = ({ startLogin, startLoginGit }) => (
   <div className="box-layout">
     <div className="box-layout__box">
       <h1 className="box-layout__title">Keep track of your Budget</h1>
@@ -12,7 +12,9 @@ export const LoginPage = ({ startLogin }) => (
 
       <button className="button" onClick={startLogin}>
         Sign in with
-        <span className="btn__icon" />
+      </button>
+      <button className="button__github" onClick={startLoginGit}>
+        Sign in with Github
       </button>
     </div>
   </div>
@@ -20,6 +22,7 @@ export const LoginPage = ({ startLogin }) => (
 
 const mapDispatchToProps = dispatch => ({
   startLogin: () => dispatch(startLogin()),
+  startLoginGit: () => dispatch(startLoginGit()),
 });
 
 export default connect(
