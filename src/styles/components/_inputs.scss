@@ -5,14 +5,12 @@
     font-weight: 300;
     font-family: $regular-font;
     font-size: $font-size-large;
-
-
+    outline-color: $deepAqua;
 }
 
 .select {
     @extend .text-input;
-
-};
+}
 
 .textarea {
     @extend .text-input;

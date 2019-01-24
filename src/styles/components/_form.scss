@@ -10,10 +10,12 @@
     margin: 0 0 $m-size 0;
     font-family: $italic-font;
     font-weight: 200;
-    color:$dark-grey;
-
+    color: $dark-grey;
 }
 
-.form input, textarea, .SingleDatePickerInput {
+.form input,
+textarea,
+.SingleDatePickerInput {
     border-radius: 5px;
+    outline-color: $deepAqua;
 }
