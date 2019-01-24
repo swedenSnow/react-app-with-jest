@@ -27,7 +27,7 @@ $npm run dev-server # will start the dev server on port 8080
 #### Express server
 
 ```bash
-$npm run start # will run node server
+$npm run start # will run node server, mainly for Heroku
 ```
 
 #### Jest testing
