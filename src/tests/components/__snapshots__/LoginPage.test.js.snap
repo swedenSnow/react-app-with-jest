@@ -10,10 +10,12 @@ exports[`should correctly render LoginPage 1`] = `
     <h1
       className="box-layout__title"
     >
-      Keep track of your Budget
+      The Budget App
     </h1>
     <p>
-      It's time to get your expenses under control
+      Fixed income, large expenses ? 
+      <br />
+      No probelemo !
     </p>
     <button
       className="button"
