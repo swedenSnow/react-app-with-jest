@@ -1,15 +1,15 @@
-.header{
-    background: $dark-blue;
+.header {
+    background: $bitcoin-orange;
 }
 
-.header__content{
+.header__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: $s-size 0;
 }
 
-.header__title{
+.header__title {
     color: white;
     text-decoration: none;
     h1 {
@@ -18,5 +18,4 @@
         font-size: 3rem;
         letter-spacing: 2px;
     }
-
 }
