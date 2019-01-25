@@ -19,11 +19,12 @@ const defaultAuthState = { auth: { uid } };
 const createMockStore = configureMockStore([thunk]);
 
 beforeEach(async done => {
-    const expensesData = await {};
-    expenses.forEach(({ id, description, note, amount, createdAt }) => {
+    const expensesData = {};
+    await expenses.forEach(({ id, description, note, amount, createdAt }) => {
         expensesData[id] = { description, note, amount, createdAt };
     });
-    db.ref(`users/${uid}/expenses`)
+    await db
+        .ref(`users/${uid}/expenses`)
         .set(expensesData)
         .then(() => done())
         .catch(err => {
