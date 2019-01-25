@@ -129,7 +129,7 @@ test('should add expense to database and store', async done => {
             expect(snapshot.val()).toEqual(expenseData);
             done();
         });
-});
+}, 8000);
 
 test('should add expense with defaults to database and store', async done => {
     const store = await createMockStore(defaultAuthState);
