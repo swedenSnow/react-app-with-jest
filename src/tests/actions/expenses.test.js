@@ -131,39 +131,8 @@ test('should add expense to database and store', async done => {
         });
 });
 
-// test('should add expense with defaults to database and store', async done => {
-//     const store = await createMockStore(defaultAuthState);
-//     const expenseDefaults = {
-//         description: '',
-//         amount: 0,
-//         note: '',
-//         createdAt: 0,
-//     };
-
-//     store
-//         .dispatch(startAddExpense({}))
-//         .then(() => {
-//             const actions = store.getActions();
-//             expect(actions[0]).toEqual({
-//                 type: 'ADD_EXPENSE',
-//                 expense: {
-//                     id: expect.any(String),
-//                     ...expenseDefaults,
-//                 },
-//             });
-
-//             return db
-//                 .ref(`users/${uid}/expenses/${actions[0].expense.id}`)
-//                 .once('value');
-//         })
-//         .then(snapshot => {
-//             expect(snapshot.val()).toEqual(expenseDefaults);
-//             done();
-//         });
-// });
-
 //! NOT async
-test('should setup set expense action object with data', () => {
+test('should setup set expense action object withh data', () => {
     const action = setExpenses(expenses);
     expect(action).toEqual({
         type: 'SET_EXPENSES',
