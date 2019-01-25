@@ -17,14 +17,14 @@ import db from '../../firebase/firebase';
 const uid = 'thisIsMyTestUid';
 const defaultAuthState = { auth: { uid } };
 const createMockStore = configureMockStore([thunk]);
+let jasmine;
 
-beforeEach(async done => {
+beforeEach(done => {
     const expensesData = {};
-    await expenses.forEach(({ id, description, note, amount, createdAt }) => {
+    expenses.forEach(({ id, description, note, amount, createdAt }) => {
         expensesData[id] = { description, note, amount, createdAt };
     });
-    await db
-        .ref(`users/${uid}/expenses`)
+    db.ref(`users/${uid}/expenses`)
         .set(expensesData)
         .then(() => done())
         .catch(err => {
@@ -40,10 +40,10 @@ test('should setup remove expense action object', () => {
     });
 });
 
-test('should remove expense from firebase', async done => {
+test('should remove expense from firebase', done => {
     const store = createMockStore(defaultAuthState);
     const id = expenses[2].id;
-    await store
+    store
         .dispatch(startRemoveExpense({ id }))
         .then(() => {
             const actions = store.getActions();
@@ -68,7 +68,7 @@ test('should setup edit expense action object', () => {
             note: 'New note value',
         },
     });
-});
+}, 8000);
 
 //! async test suite
 test('should edit expense from firebase', done => {
@@ -90,7 +90,7 @@ test('should edit expense from firebase', done => {
             expect(snapshot.val().amount).toBe(updates.amount);
             done();
         });
-});
+}, 8000);
 
 test('should setup add expense action object with provided values', () => {
     const action = addExpense(expenses[2]);
