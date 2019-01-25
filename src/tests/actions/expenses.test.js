@@ -17,10 +17,9 @@ import db from '../../firebase/firebase';
 const uid = 'thisIsMyTestUid';
 const defaultAuthState = { auth: { uid } };
 const createMockStore = configureMockStore([thunk]);
-let jasmine;
 
-beforeEach(done => {
-    const expensesData = {};
+beforeEach(async done => {
+    const expensesData = await {};
     expenses.forEach(({ id, description, note, amount, createdAt }) => {
         expensesData[id] = { description, note, amount, createdAt };
     });
@@ -40,8 +39,8 @@ test('should setup remove expense action object', () => {
     });
 });
 
-test('should remove expense from firebase', done => {
-    const store = createMockStore(defaultAuthState);
+test('should remove expense from firebase', async done => {
+    const store = await createMockStore(defaultAuthState);
     const id = expenses[2].id;
     store
         .dispatch(startRemoveExpense({ id }))
@@ -68,11 +67,11 @@ test('should setup edit expense action object', () => {
             note: 'New note value',
         },
     });
-}, 8000);
+});
 
 //! async test suite
-test('should edit expense from firebase', done => {
-    const store = createMockStore(defaultAuthState);
+test('should edit expense from firebase', async done => {
+    const store = await createMockStore(defaultAuthState);
     const id = expenses[0].id;
     const updates = { amount: 21045 };
     store
@@ -90,18 +89,18 @@ test('should edit expense from firebase', done => {
             expect(snapshot.val().amount).toBe(updates.amount);
             done();
         });
-}, 8000);
+});
 
-test('should setup add expense action object with provided values', () => {
-    const action = addExpense(expenses[2]);
+test('should setup add expense action object with provided values', async () => {
+    const action = await addExpense(expenses[2]);
     expect(action).toEqual({
         type: 'ADD_EXPENSE',
         expense: expenses[2],
     });
 });
 
-test('should add expense to database and store', done => {
-    const store = createMockStore(defaultAuthState);
+test('should add expense to database and store', async done => {
+    const store = await createMockStore(defaultAuthState);
     const expenseData = {
         description: 'Mouse',
         amount: 3000,
@@ -131,8 +130,8 @@ test('should add expense to database and store', done => {
         });
 });
 
-test('should add expense with defaults to database and store', done => {
-    const store = createMockStore(defaultAuthState);
+test('should add expense with defaults to database and store', async done => {
+    const store = await createMockStore(defaultAuthState);
     const expenseDefaults = {
         description: '',
         amount: 0,
