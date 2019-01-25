@@ -18,15 +18,18 @@ const uid = 'thisIsMyTestUid';
 const defaultAuthState = { auth: { uid } };
 const createMockStore = configureMockStore([thunk]);
 
-beforeEach(done => {
+beforeEach(async done => {
     const expensesData = {};
-    expenses.forEach(({ id, description, note, amount, createdAt }) => {
+    await expenses.forEach(({ id, description, note, amount, createdAt }) => {
         expensesData[id] = { description, note, amount, createdAt };
     });
-    db.ref(`users/${uid}/expenses`)
+    await db
+        .ref(`users/${uid}/expenses`)
         .set(expensesData)
         .then(() => done())
-        .catch(err => console.log(err));
+        .catch(err => {
+            throw err;
+        });
 });
 
 test('should setup remove expense action object', () => {
@@ -37,10 +40,10 @@ test('should setup remove expense action object', () => {
     });
 });
 
-test('should remove expense from firebase', done => {
+test('should remove expense from firebase', async done => {
     const store = createMockStore(defaultAuthState);
     const id = expenses[2].id;
-    store
+    await store
         .dispatch(startRemoveExpense({ id }))
         .then(() => {
             const actions = store.getActions();
