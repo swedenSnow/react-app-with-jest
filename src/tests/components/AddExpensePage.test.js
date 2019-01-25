@@ -16,7 +16,7 @@ beforeEach(() => {
     );
 });
 
-test('should render AddExpensePage correct', () => {
+test('shouldd render AddExpensePage correct', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
