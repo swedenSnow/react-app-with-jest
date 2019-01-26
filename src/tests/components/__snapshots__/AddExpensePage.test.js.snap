@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shouldd render AddExpensePage correct 1`] = `
+exports[`should render AddExpensePage correct 1`] = `
 <div>
   <div
     className="page-header"
