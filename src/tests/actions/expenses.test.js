@@ -28,7 +28,7 @@ beforeEach(async done => {
         .set(expensesData)
         .then(() => done())
         .catch(err => {
-            throw err;
+            throw err('This is not working', err);
         });
 });
 

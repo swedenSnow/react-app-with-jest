@@ -15,3 +15,13 @@ test('should call startLogout on button click', () => {
     wrapper.find('button').simulate('click');
     expect(startLogout).toHaveBeenCalled();
 });
+
+test('should render Header with an <h1></h1>', () => {
+    const wrapper = shallow(<Header />);
+    expect(wrapper.find('h1')).toHaveLength(1);
+});
+
+test('should render Header to contain Budget text', () => {
+    const wrapper = shallow(<Header />);
+    expect(wrapper.find('h1').text()).toContain('Budget');
+});
