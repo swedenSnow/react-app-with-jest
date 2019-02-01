@@ -28,7 +28,7 @@ $yarn dev-server # will start the dev server on port 8080
 #### Express server
 
 ```bash
-$yarn start # will run node server, mainly for Heroku
+$yarn start # will run node server
 ```
 
 #### Jest testing
