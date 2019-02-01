@@ -8,3 +8,6 @@ npm-debug.log*
 yarn-debug.log*
 .env.test
 .env.development
+
+#testing
+/coverage

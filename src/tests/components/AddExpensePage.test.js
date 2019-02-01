@@ -25,3 +25,14 @@ test('should handle onSubmit correct', () => {
     expect(history.push).toHaveBeenLastCalledWith('/');
     expect(startAddExpense).toHaveBeenLastCalledWith(expenses[1]);
 });
+const generateGreeting = (name = 'Anonymous') => `Hello ${name}!`;
+
+test('should greet user name', () => {
+    const name = generateGreeting('Hani');
+    expect(name).toEqual('Hello Hani!');
+});
+
+test('should generate greeting for no name user', () => {
+    const res = generateGreeting();
+    expect(res).toBe('Hello Anonymous!');
+});

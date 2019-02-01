@@ -1,5 +1,6 @@
 //! react-test-renderer
 // ?a lib that allows us to renderer our components in just javscrict code.
+//! Using snapshotSerializers (bootstraped from jest.config.json) instead of having to use toJSON everywhere!!!!!!!!
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Header } from '../../components/Header';
@@ -14,4 +15,14 @@ test('should call startLogout on button click', () => {
     const wrapper = shallow(<Header startLogout={startLogout} />);
     wrapper.find('button').simulate('click');
     expect(startLogout).toHaveBeenCalled();
+});
+
+test('should render Header with an <h1></h1>', () => {
+    const wrapper = shallow(<Header />);
+    expect(wrapper.find('h1')).toHaveLength(1);
+});
+
+test('should render Header to contain Budget text', () => {
+    const wrapper = shallow(<Header />);
+    expect(wrapper.find('h1').text()).toContain('Budget');
 });
