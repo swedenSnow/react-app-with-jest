@@ -1,5 +1,6 @@
 //! react-test-renderer
 // ?a lib that allows us to renderer our components in just javscrict code.
+//! Using snapshotSerializers (bootstraped from jest.config.json) instead of having to use toJSON everywhere!!!!!!!!
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Header } from '../../components/Header';
