@@ -3,16 +3,16 @@
 ## Requires
 
 - [Node](https://nodejs.org/en/download)
-- [npm](https://www.npmjs.com/)
+- [Yarn](https://yarnpkg.com/lang/en/)
 
 ### Install
 
 ```bash
-$ npm i
+$ yarn
 ```
 
 ```bash
-$ npm run build:prod
+$ yarn build:prod
 ```
 
 ## Development
@@ -20,20 +20,23 @@ $ npm run build:prod
 #### Webpack dev server
 
 ```bash
-$npm run dev-server # will start the dev server on port 8080
+$yarn dev-server # will start the dev server on port 8080
 ```
 
 
 #### Express server
 
 ```bash
-$npm run start # will run node server, mainly for Heroku
+$yarn start # will run node server, mainly for Heroku
 ```
 
 #### Jest testing
 
 ```bash
-$npm test -- --watch # will run all test suites with watch flag
+$yarn test --watch # will run all test suites with watch flag
+$yarn test --coverage # will create att coverage rapport
+
+
 ```
 
 
