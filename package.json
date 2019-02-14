@@ -15,6 +15,24 @@
     "start": "node server/server.js",
     "heroku-postbuild": "npm run build:prod"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/**.js",
+      "!src/index.js",
+      "!src/serviceWorker.js",
+      "!src/fakePosts.js",
+      "!src/setupTests.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 0
+      }
+    }
+  },
+  
   "author": "Hani FEND17",
   "license": "MIT",
   "dependencies": {

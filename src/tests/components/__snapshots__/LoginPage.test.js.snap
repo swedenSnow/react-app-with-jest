@@ -19,11 +19,13 @@ exports[`should correctly render LoginPage 1`] = `
     </p>
     <button
       className="button"
+      data-test="gmail"
     >
       Sign in with
     </button>
     <button
       className="button__github"
+      data-test="github"
     >
       Sign in with Github
     </button>
