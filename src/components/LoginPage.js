@@ -13,10 +13,14 @@ export const LoginPage = ({ startLogin, startLoginGit }) => (
                 No probelemo !
             </p>
 
-            <button className="button" onClick={startLogin}>
+            <button data-test="gmail" className="button" onClick={startLogin}>
                 Sign in with
             </button>
-            <button className="button__github" onClick={startLoginGit}>
+            <button
+                data-test="github"
+                className="button__github"
+                onClick={startLoginGit}
+            >
                 Sign in with Github
             </button>
         </div>

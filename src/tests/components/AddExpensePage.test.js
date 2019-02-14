@@ -15,9 +15,9 @@ beforeEach(() => {
         <AddExpensePage startAddExpense={startAddExpense} history={history} />
     );
 });
-
 test('should render AddExpensePage correct', () => {
     expect(wrapper).toMatchSnapshot();
+    console.log(wrapper.debug());
 });
 
 test('should handle onSubmit correct', () => {
