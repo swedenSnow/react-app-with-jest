@@ -4,7 +4,7 @@ import filtersReducer from '../../reducers/filters';
 //! @@INIT === Dispatch default state from Redux.store
 test('should setup default filter values', () => {
     const state = filtersReducer(undefined, { type: '@@INIT' });
-    console.log(state);
+    // console.log(state);
     expect(state).toEqual({
         text: '',
         sortBy: 'date',
