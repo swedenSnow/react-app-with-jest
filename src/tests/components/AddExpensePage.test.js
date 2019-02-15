@@ -17,22 +17,11 @@ beforeEach(() => {
 });
 test('should render AddExpensePage correct', () => {
     expect(wrapper).toMatchSnapshot();
-    console.log(wrapper.debug());
+    // console.log(wrapper.debug());
 });
 
 test('should handle onSubmit correct', () => {
-    wrapper.find('ExpenseForm').prop('onSubmit')(expenses[1]);
+    wrapper.find('ExpenseForm').prop('onSubmit')(expenses[2]);
     expect(history.push).toHaveBeenLastCalledWith('/');
     expect(startAddExpense).toHaveBeenLastCalledWith(expenses[1]);
-});
-const generateGreeting = (name = 'Anonymous') => `Hello ${name}!`;
-
-test('should greet user name', () => {
-    const name = generateGreeting('Hani');
-    expect(name).toEqual('Hello Hani!');
-});
-
-test('should generate greeting for no name user', () => {
-    const res = generateGreeting();
-    expect(res).toBe('Hello Anonymous!');
 });
