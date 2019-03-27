@@ -16,12 +16,22 @@ $ yarn
 $ yarn build:prod
 ```
 
+
+
 ## Development
 
 #### Webpack dev server
 
+In the project, stand in server dir and type:
+
 ```bash
-$yarn dev-server # will start the dev server on port 8080
+$yarn dev-server # will start the dev server on port 4000
+```
+
+Then start the client:
+
+```bash
+$yarn dev-server # will start the dev server on port 3000
 ```
 
 
